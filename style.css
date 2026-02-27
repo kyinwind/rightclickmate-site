@@ -4,6 +4,7 @@
     --subtext: #555;
     --accent: #4a6f58;
     --card-bg: #ffffff;
+    --fg-blue : #007aff;
 }
 
 body {
@@ -80,7 +81,7 @@ p {
     margin-top: auto;
     padding: 10px 20px;
     border-radius: 999px;
-    background: #4a6f58;
+    background: var(--fg-blue);
     color: white;
     text-decoration: none;
     font-size: 14px;
@@ -94,8 +95,9 @@ p {
 
 .button {
     padding: 10px 20px;
+    margin-top: auto;
     border-radius: 999px;
-    background: #4a6f58;
+    background: var(--fg-blue);
     color: white;
     text-decoration: none;
     font-size: 14px;
