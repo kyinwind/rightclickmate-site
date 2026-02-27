@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RightClickMate – Finder Right-Click Assistant for macOS</title>
+
+<style>
+:root {
+    --bg: #ffffff;
+    --text: #111111;
+    --subtext: #666666;
+    --accent: #007aff;
+    --card: #f5f5f7;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #000000;
+        --text: #f5f5f7;
+        --subtext: #aaaaaa;
+        --card: #1c1c1e;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: var(--subtext);
+    margin-bottom: 40px;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    background: var(--accent);
+    color: white;
+    transition: opacity 0.2s ease;
+}
+
+.button:hover {
+    opacity: 0.85;
+}
+
+/* Screenshot Section */
+.screenshot-section {
+    margin: 80px 0;
+    text-align: center;
+}
+
+.screenshot-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.screenshot-track {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.screenshot-track img {
+    width: 100%;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: 18px;
+    z-index: 10;   /* 加这一行 */
+}
+
+.nav-btn:hover {
+    background: rgba(0,0,0,0.6);
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+.section {
+    margin-bottom: 80px;
+}
+
+.section h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 16px;
+}
+
+.footer {
+    text-align: center;
+    color: var(--subtext);
+    font-size: 14px;
+    margin-top: 60px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+<h1>RightClickMate</h1>
+<p class="subtitle">
+Supercharge your macOS Finder with powerful right-click tools.
+</p>
+<a class="button" href="https://apps.apple.com/app/6757662347">
+Download on the Mac App Store
+</a>
+</div>
+
+<!-- Screenshot Carousel -->
+<div class="screenshot-section">
+<h2>App Preview</h2>
+
+<div class="screenshot-wrapper">
+<button class="nav-btn prev">&#10094;</button>
+<button class="nav-btn next">&#10095;</button>
+
+<div class="screenshot-track">
+<img src="screenshot1.png" alt="Screenshot 1">
+<img src="screenshot2.png" alt="Screenshot 2">
+<img src="screenshot3.png" alt="Screenshot 3">
+<img src="screenshot4.png" alt="Screenshot 4">
+<img src="screenshot5.png" alt="Screenshot 5">
+</div>
+</div>
+</div>
+
+<div class="section">
+<h2>Key Features</h2>
+<div class="features">
+
+<div class="card">
+<h3>Copy File Path</h3>
+<p>Instantly copy the full file path directly from Finder.</p>
+</div>
+
+<div class="card">
+<h3>Directory Tree Generator</h3>
+<p>Generate and copy clean directory tree structures for sharing or documentation.</p>
+</div>
+
+<div class="card">
+<h3>Open in Terminal</h3>
+<p>Launch Terminal at the selected folder in one click.</p>
+</div>
+
+<div class="card">
+<h3>Image Batch Resize</h3>
+<p>Quickly resize multiple images in one click.</p>
+</div>
+
+<div class="card">
+<h3>Batch Processing</h3>
+<p>Handle multiple files efficiently from the context menu.</p>
+</div>
+
+<div class="card">
+<h3>Clean Desktop Mode</h3>
+<p>Instantly hide desktop clutter and stay focused.</p>
+</div>
+
+</div>
+</div>
+
+<div class="footer">
+© 2026 Xuehui Yang
+</div>
+
+</div>
+
+<script>
+const track = document.querySelector('.screenshot-track');
+const slides = Array.from(track.children);
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+
+let index = 0;
+
+function updateSlide() {
+    track.style.transform = 'translateX(-' + index * 100 + '%)';
+}
+
+nextBtn.addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    updateSlide();
+});
+
+prevBtn.addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlide();
+});
+</script>
+
+</body>
+</html>
