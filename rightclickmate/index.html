@@ -53,6 +53,13 @@ h1 {
     margin-bottom: 40px;
 }
 
+.button-group {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
 .button {
     display: inline-block;
     padding: 14px 28px;
@@ -67,7 +74,23 @@ h1 {
 .button:hover {
     opacity: 0.85;
 }
+.download-button {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #f2f2f2;
+    color: rgb(3, 3, 3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.2s ease;
+}
 
+.download-button:hover {
+    transform: scale(1.1);
+}
 /* Screenshot Section */
 .screenshot-section {
     margin: 80px 0;
