@@ -1,221 +1,313 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kylinwind Studio – Focused Apps</title>
-<link rel="stylesheet" href="/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kylinwind Studio – Focused Apps</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
 
-<body>
+  <body>
+    <!-- 语言切换 -->
+    <div style="text-align: right; padding: 20px 40px; font-size: 14px">
+      <a href="#" onclick="setLang('en')">EN</a> |
+      <a href="#" onclick="setLang('zh')">中文</a>
+    </div>
 
-<!-- 语言切换 -->
-<div style="text-align:right;padding:20px 40px;font-size:14px;">
-    <a href="#" onclick="setLang('en')">EN</a> | 
-    <a href="#" onclick="setLang('zh')">中文</a>
-</div>
-
-<div class="hero">
-    <h1>
+    <div class="hero">
+      <h1>
         <span data-lang="en">Focused Apps for Mind and Productivity</span>
         <span data-lang="zh">专注于心灵与效率的应用</span>
-    </h1>
-    <p>
+      </h1>
+      <p>
         <span data-lang="en">
-            We build simple, intentional tools for spiritual practice and digital workflow.
+          We build simple, intentional tools for spiritual practice and digital
+          workflow.
         </span>
         <span data-lang="zh">
-            我们打造简洁、有意识设计的工具，服务于修行实践与数字工作流程。
+          我们打造简洁、有意识设计的工具，服务于修行实践与数字工作流程。
         </span>
-    </p>
-</div>
+      </p>
+    </div>
 
-<div class="container">
+    <div class="container">
+      <!-- Spiritual Practice Tools -->
+      <div class="section">
+        <h2>
+          <span data-lang="en">Spiritual Practice Tools</span>
+          <span data-lang="zh">修行工具系列</span>
+        </h2>
+        <p>
+          <span data-lang="en">
+            Digital companions designed to support daily spiritual discipline
+            and mindful living.
+          </span>
+          <span data-lang="zh"> 为日常修行与专注生活设计的数字辅助工具。 </span>
+        </p>
 
-<!-- Spiritual Practice Tools -->
-<div class="section">
-    <h2>
-        <span data-lang="en">Spiritual Practice Tools</span>
-        <span data-lang="zh">修行工具系列</span>
-    </h2>
-    <p>
-        <span data-lang="en">
-            Digital companions designed to support daily spiritual discipline and mindful living.
-        </span>
-        <span data-lang="zh">
-            为日常修行与专注生活设计的数字辅助工具。
-        </span>
-    </p>
+        <div class="app-grid">
+          <!-- GongKe -->
+          <div class="app-card">
+            <img src="images/GongKe.png" class="app-icon" />
+            <h3>
+              <span data-lang="en">GongKe Assistant</span>
+              <span data-lang="zh">功课助手</span>
+            </h3>
+            <p>
+              <span data-lang="en"
+                >Organize and track your daily practice sessions.</span
+              >
+              <span data-lang="zh">现代人修行的发愿、功课记录工具</span>
+            </p>
+            <div class="button-group">
+              <a href="/gongke/" class="button">
+                <span data-lang="en">View App</span>
+                <span data-lang="zh">查看介绍</span>
+              </a>
+              <a
+                href="https://apps.apple.com/cn/app/%E5%8A%9F%E8%AF%BE%E5%8A%A9%E6%89%8B/id6639604349"
+                class="download-button"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M16.365 1.43c0 1.14-.41 2.24-1.09 3.07-.75.92-1.97 1.63-3.13 1.54-.15-1.11.45-2.3 1.12-3.04.74-.88 2.03-1.55 3.1-1.57zM21.43 17.64c-.6 1.38-.88 1.99-1.64 3.2-1.06 1.66-2.56 3.74-4.41 3.76-1.63.02-2.05-1.06-4.26-1.04-2.22.02-2.68 1.06-4.31 1.04-1.85-.02-3.27-1.9-4.33-3.56C-.7 16.86-.74 11.27 2.17 8.5c1.35-1.27 3.1-1.96 4.75-1.96 1.74 0 2.84 1.07 4.27 1.07 1.38 0 2.23-1.07 4.26-1.07 1.49 0 3.08.8 4.43 2.17-3.9 2.14-3.27 7.73 1.55 8.93z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
 
-<div class="app-grid">
+          <!-- SongJing -->
+          <div class="app-card">
+            <img src="images/SongJing.png" class="app-icon" />
+            <h3>
+              <span data-lang="en">SongJing Assistant</span>
+              <span data-lang="zh">诵经助手</span>
+            </h3>
+            <p>
+              <span data-lang="en"
+                >Elegant chanting experience with audio support.</span
+              >
+              <span data-lang="zh">同功课助手</span>
+            </p>
+            <div class="button-group">
+              <a href="/gongke/" class="button">
+                <span data-lang="en">View App</span>
+                <span data-lang="zh">查看介绍</span>
+              </a>
+              <a
+                href="https://apps.apple.com/app/6448427701"
+                class="download-button"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M16.365 1.43c0 1.14-.41 2.24-1.09 3.07-.75.92-1.97 1.63-3.13 1.54-.15-1.11.45-2.3 1.12-3.04.74-.88 2.03-1.55 3.1-1.57zM21.43 17.64c-.6 1.38-.88 1.99-1.64 3.2-1.06 1.66-2.56 3.74-4.41 3.76-1.63.02-2.05-1.06-4.26-1.04-2.22.02-2.68 1.06-4.31 1.04-1.85-.02-3.27-1.9-4.33-3.56C-.7 16.86-.74 11.27 2.17 8.5c1.35-1.27 3.1-1.96 4.75-1.96 1.74 0 2.84 1.07 4.27 1.07 1.38 0 2.23-1.07 4.26-1.07 1.49 0 3.08.8 4.43 2.17-3.9 2.14-3.27 7.73 1.55 8.93z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
 
-<!-- GongKe -->
-<div class="app-card">
-<img src="images/GongKe.png" class="app-icon">
-<h3>
-<span data-lang="en">GongKe Assistant</span>
-<span data-lang="zh">功课助手</span>
-</h3>
-<p>
-<span data-lang="en">Organize and track your daily practice sessions.</span>
-<span data-lang="zh">现代人修行的发愿、功课记录工具</span>
-</p>
-<div class="button-group">
-<a href="/gongke/" class="button">
-<span data-lang="en">View App</span>
-<span data-lang="zh">查看介绍</span>
-</a>
-<a href="https://apps.apple.com/cn/app/%E5%8A%9F%E8%AF%BE%E5%8A%A9%E6%89%8B/id6639604349" class="download-button" target="_blank" rel="noopener">
-<svg viewBox="0 0 24 24"><path d="M16.365 1.43c0 1.14-.41 2.24-1.09 3.07-.75.92-1.97 1.63-3.13 1.54-.15-1.11.45-2.3 1.12-3.04.74-.88 2.03-1.55 3.1-1.57zM21.43 17.64c-.6 1.38-.88 1.99-1.64 3.2-1.06 1.66-2.56 3.74-4.41 3.76-1.63.02-2.05-1.06-4.26-1.04-2.22.02-2.68 1.06-4.31 1.04-1.85-.02-3.27-1.9-4.33-3.56C-.7 16.86-.74 11.27 2.17 8.5c1.35-1.27 3.1-1.96 4.75-1.96 1.74 0 2.84 1.07 4.27 1.07 1.38 0 2.23-1.07 4.26-1.07 1.49 0 3.08.8 4.43 2.17-3.9 2.14-3.27 7.73 1.55 8.93z"/></svg>
-</a>
-</div>
-</div>
+          <!-- NianFo -->
+          <div class="app-card">
+            <img src="images/NianFo.png" class="app-icon" />
+            <h3>
+              <span data-lang="en">NianFo Assistant</span>
+              <span data-lang="zh">念佛助手</span>
+            </h3>
+            <p>
+              <span data-lang="en">Stay focused during mantra recitation.</span>
+              <span data-lang="zh">帮助你在念佛时保持专注</span>
+            </p>
+            <div class="button-group">
+              <a href="/nianfo/" class="button">
+                <span data-lang="en">View App</span>
+                <span data-lang="zh">查看介绍</span>
+              </a>
+              <a
+                href="https://apps.apple.com/app/6448988399"
+                class="download-button"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M16.365 1.43c0 1.14-.41 2.24-1.09 3.07-.75.92-1.97 1.63-3.13 1.54-.15-1.11.45-2.3 1.12-3.04.74-.88 2.03-1.55 3.1-1.57zM21.43 17.64c-.6 1.38-.88 1.99-1.64 3.2-1.06 1.66-2.56 3.74-4.41 3.76-1.63.02-2.05-1.06-4.26-1.04-2.22.02-2.68 1.06-4.31 1.04-1.85-.02-3.27-1.9-4.33-3.56C-.7 16.86-.74 11.27 2.17 8.5c1.35-1.27 3.1-1.96 4.75-1.96 1.74 0 2.84 1.07 4.27 1.07 1.38 0 2.23-1.07 4.26-1.07 1.49 0 3.08.8 4.43 2.17-3.9 2.14-3.27 7.73 1.55 8.93z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
 
-<!-- SongJing -->
-<div class="app-card">
-<img src="images/SongJing.png" class="app-icon">
-<h3>
-<span data-lang="en">SongJing Assistant</span>
-<span data-lang="zh">诵经助手</span>
-</h3>
-<p>
-<span data-lang="en">Elegant chanting experience with audio support.</span>
-<span data-lang="zh">同功课助手</span>
-</p>
-<div class="button-group">
-<a href="/gongke/" class="button">
-<span data-lang="en">View App</span>
-<span data-lang="zh">查看介绍</span>
-</a>
-<a href="https://apps.apple.com/app/6448427701" class="download-button" target="_blank" rel="noopener">
-<svg viewBox="0 0 24 24"><path d="M16.365 1.43c0 1.14-.41 2.24-1.09 3.07-.75.92-1.97 1.63-3.13 1.54-.15-1.11.45-2.3 1.12-3.04.74-.88 2.03-1.55 3.1-1.57zM21.43 17.64c-.6 1.38-.88 1.99-1.64 3.2-1.06 1.66-2.56 3.74-4.41 3.76-1.63.02-2.05-1.06-4.26-1.04-2.22.02-2.68 1.06-4.31 1.04-1.85-.02-3.27-1.9-4.33-3.56C-.7 16.86-.74 11.27 2.17 8.5c1.35-1.27 3.1-1.96 4.75-1.96 1.74 0 2.84 1.07 4.27 1.07 1.38 0 2.23-1.07 4.26-1.07 1.49 0 3.08.8 4.43 2.17-3.9 2.14-3.27 7.73 1.55 8.93z"/></svg>
-</a>
-</div>
-</div>
+          <!-- BaiChan -->
+          <div class="app-card">
+            <img src="images/BaiChan.png" class="app-icon" />
+            <h3>
+              <span data-lang="en">BaiChan Assistant</span>
+              <span data-lang="zh">拜忏助手</span>
+            </h3>
+            <p>
+              <span data-lang="en"
+                >Structured repentance and guided sessions.</span
+              >
+              <span data-lang="zh">每日三省吾身</span>
+            </p>
+            <div class="button-group">
+              <a href="/baichan/" class="button">
+                <span data-lang="en">View App</span>
+                <span data-lang="zh">查看介绍</span>
+              </a>
+              <a
+                href="https://apps.apple.com/app/6473900841"
+                class="download-button"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M16.365 1.43c0 1.14-.41 2.24-1.09 3.07-.75.92-1.97 1.63-3.13 1.54-.15-1.11.45-2.3 1.12-3.04.74-.88 2.03-1.55 3.1-1.57zM21.43 17.64c-.6 1.38-.88 1.99-1.64 3.2-1.06 1.66-2.56 3.74-4.41 3.76-1.63.02-2.05-1.06-4.26-1.04-2.22.02-2.68 1.06-4.31 1.04-1.85-.02-3.27-1.9-4.33-3.56C-.7 16.86-.74 11.27 2.17 8.5c1.35-1.27 3.1-1.96 4.75-1.96 1.74 0 2.84 1.07 4.27 1.07 1.38 0 2.23-1.07 4.26-1.07 1.49 0 3.08.8 4.43 2.17-3.9 2.14-3.27 7.73 1.55 8.93z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
 
-<!-- NianFo -->
-<div class="app-card">
-<img src="images/NianFo.png" class="app-icon">
-<h3>
-<span data-lang="en">NianFo Assistant</span>
-<span data-lang="zh">念佛助手</span>
-</h3>
-<p>
-<span data-lang="en">Stay focused during mantra recitation.</span>
-<span data-lang="zh">帮助你在念佛时保持专注</span>
-</p>
-<div class="button-group">
-<a href="/nianfo/" class="button">
-<span data-lang="en">View App</span>
-<span data-lang="zh">查看介绍</span>
-</a>
-<a href="https://apps.apple.com/app/6448988399" class="download-button" target="_blank" rel="noopener">
-<svg viewBox="0 0 24 24"><path d="M16.365 1.43c0 1.14-.41 2.24-1.09 3.07-.75.92-1.97 1.63-3.13 1.54-.15-1.11.45-2.3 1.12-3.04.74-.88 2.03-1.55 3.1-1.57zM21.43 17.64c-.6 1.38-.88 1.99-1.64 3.2-1.06 1.66-2.56 3.74-4.41 3.76-1.63.02-2.05-1.06-4.26-1.04-2.22.02-2.68 1.06-4.31 1.04-1.85-.02-3.27-1.9-4.33-3.56C-.7 16.86-.74 11.27 2.17 8.5c1.35-1.27 3.1-1.96 4.75-1.96 1.74 0 2.84 1.07 4.27 1.07 1.38 0 2.23-1.07 4.26-1.07 1.49 0 3.08.8 4.43 2.17-3.9 2.14-3.27 7.73 1.55 8.93z"/></svg>
-</a>
-</div>
-</div>
+          <div class="app-card">
+            <img src="images/DayDayUp.png" class="app-icon" />
+            <h3>
+              <span data-lang="en">Day Day Up</span>
+              <span data-lang="zh">天天向上 </span>
+            </h3>
+            <p>
+              <span data-lang="en"
+                >Daily Wisdom</span
+              >
+              <span data-lang="zh">每日格言</span>
+            </p>
+            <div class="button-group">
+              <a href="/daydayup/" class="button">
+                <span data-lang="en">View App</span>
+                <span data-lang="zh">查看介绍</span>
+              </a>
+              <a
+                href="https://apps.apple.com/app/6752538298"
+                class="download-button"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M16.365 1.43c0 1.14-.41 2.24-1.09 3.07-.75.92-1.97 1.63-3.13 1.54-.15-1.11.45-2.3 1.12-3.04.74-.88 2.03-1.55 3.1-1.57zM21.43 17.64c-.6 1.38-.88 1.99-1.64 3.2-1.06 1.66-2.56 3.74-4.41 3.76-1.63.02-2.05-1.06-4.26-1.04-2.22.02-2.68 1.06-4.31 1.04-1.85-.02-3.27-1.9-4.33-3.56C-.7 16.86-.74 11.27 2.17 8.5c1.35-1.27 3.1-1.96 4.75-1.96 1.74 0 2.84 1.07 4.27 1.07 1.38 0 2.23-1.07 4.26-1.07 1.49 0 3.08.8 4.43 2.17-3.9 2.14-3.27 7.73 1.55 8.93z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<!-- BaiChan -->
-<div class="app-card">
-<img src="images/BaiChan.png" class="app-icon">
-<h3>
-<span data-lang="en">BaiChan Assistant</span>
-<span data-lang="zh">拜忏助手</span>
-</h3>
-<p>
-<span data-lang="en">Structured repentance and guided sessions.</span>
-<span data-lang="zh">每日三省吾身</span>
-</p>
-<div class="button-group">
-<a href="/baichan/" class="button">
-<span data-lang="en">View App</span>
-<span data-lang="zh">查看介绍</span>
-</a>
-<a href="https://apps.apple.com/app/6473900841" class="download-button" target="_blank" rel="noopener">
-<svg viewBox="0 0 24 24"><path d="M16.365 1.43c0 1.14-.41 2.24-1.09 3.07-.75.92-1.97 1.63-3.13 1.54-.15-1.11.45-2.3 1.12-3.04.74-.88 2.03-1.55 3.1-1.57zM21.43 17.64c-.6 1.38-.88 1.99-1.64 3.2-1.06 1.66-2.56 3.74-4.41 3.76-1.63.02-2.05-1.06-4.26-1.04-2.22.02-2.68 1.06-4.31 1.04-1.85-.02-3.27-1.9-4.33-3.56C-.7 16.86-.74 11.27 2.17 8.5c1.35-1.27 3.1-1.96 4.75-1.96 1.74 0 2.84 1.07 4.27 1.07 1.38 0 2.23-1.07 4.26-1.07 1.49 0 3.08.8 4.43 2.17-3.9 2.14-3.27 7.73 1.55 8.93z"/></svg>
-</a>
-</div>
-</div>
+      <!-- Productivity Tools -->
+      <div class="section">
+        <h2>
+          <span data-lang="en">Productivity Tools</span>
+          <span data-lang="zh">效率工具系列</span>
+        </h2>
+        <p>
+          <span data-lang="en"
+            >Lightweight macOS utilities built for speed, clarity and
+            efficiency.</span
+          >
+          <span data-lang="zh">轻量级 macOS 工具，专为速度与效率打造。</span>
+        </p>
 
-</div>
-</div>
+        <div class="app-grid">
+          <div class="app-card">
+            <img src="images/RightClickMate.png" class="app-icon" />
+            <h3>RightClickMate</h3>
+            <p>
+              <span data-lang="en"
+                >Supercharge Finder with powerful right-click tools.</span
+              >
+              <span data-lang="zh">强大的右键工具</span>
+            </p>
+            <div class="button-group">
+              <a href="/rightclickmate/" class="button">
+                <span data-lang="en">View App</span>
+                <span data-lang="zh">查看介绍</span>
+              </a>
+              <a
+                href="https://apps.apple.com/app/6757662347"
+                class="download-button"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M16.365 1.43c0 1.14-.41 2.24-1.09 3.07-.75.92-1.97 1.63-3.13 1.54-.15-1.11.45-2.3 1.12-3.04.74-.88 2.03-1.55 3.1-1.57zM21.43 17.64c-.6 1.38-.88 1.99-1.64 3.2-1.06 1.66-2.56 3.74-4.41 3.76-1.63.02-2.05-1.06-4.26-1.04-2.22.02-2.68 1.06-4.31 1.04-1.85-.02-3.27-1.9-4.33-3.56C-.7 16.86-.74 11.27 2.17 8.5c1.35-1.27 3.1-1.96 4.75-1.96 1.74 0 2.84 1.07 4.27 1.07 1.38 0 2.23-1.07 4.26-1.07 1.49 0 3.08.8 4.43 2.17-3.9 2.14-3.27 7.73 1.55 8.93z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
 
-<!-- Productivity Tools -->
-<div class="section">
-<h2>
-<span data-lang="en">Productivity Tools</span>
-<span data-lang="zh">效率工具系列</span>
-</h2>
-<p>
-<span data-lang="en">Lightweight macOS utilities built for speed, clarity and efficiency.</span>
-<span data-lang="zh">轻量级 macOS 工具，专为速度与效率打造。</span>
-</p>
+          <div class="app-card">
+            <img src="images/TTSMate.png" class="app-icon" />
+            <h3>TTSMate</h3>
+            <p>
+              <span data-lang="en"
+                >Convert text to speech instantly on macOS.</span
+              >
+              <span data-lang="zh">在 macOS 上即时文本转语音</span>
+            </p>
+            <div class="button-group">
+              <a href="/ttsmate/" class="button">
+                <span data-lang="en">View App</span>
+                <span data-lang="zh">查看介绍</span>
+              </a>
+              <a
+                href="https://apps.apple.com/app/6752127439"
+                class="download-button"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M16.365 1.43c0 1.14-.41 2.24-1.09 3.07-.75.92-1.97 1.63-3.13 1.54-.15-1.11.45-2.3 1.12-3.04.74-.88 2.03-1.55 3.1-1.57zM21.43 17.64c-.6 1.38-.88 1.99-1.64 3.2-1.06 1.66-2.56 3.74-4.41 3.76-1.63.02-2.05-1.06-4.26-1.04-2.22.02-2.68 1.06-4.31 1.04-1.85-.02-3.27-1.9-4.33-3.56C-.7 16.86-.74 11.27 2.17 8.5c1.35-1.27 3.1-1.96 4.75-1.96 1.74 0 2.84 1.07 4.27 1.07 1.38 0 2.23-1.07 4.26-1.07 1.49 0 3.08.8 4.43 2.17-3.9 2.14-3.27 7.73 1.55 8.93z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<div class="app-grid">
+    <div class="footer">
+      <p>Support: yangxuehui@outlook.com</p>
+      <p>© 2026 Kylinwind Studio. All rights reserved.</p>
+    </div>
 
-<div class="app-card">
-<img src="images/RightClickMate.png" class="app-icon">
-<h3>RightClickMate</h3>
-<p>
-<span data-lang="en">Supercharge Finder with powerful right-click tools.</span>
-<span data-lang="zh">强大的右键工具</span>
-</p>
-<div class="button-group">
-<a href="/rightclickmate/" class="button">
-<span data-lang="en">View App</span>
-<span data-lang="zh">查看介绍</span>
-</a>
-<a href="https://apps.apple.com/app/6757662347" class="download-button" target="_blank" rel="noopener">
-<svg viewBox="0 0 24 24"><path d="M16.365 1.43c0 1.14-.41 2.24-1.09 3.07-.75.92-1.97 1.63-3.13 1.54-.15-1.11.45-2.3 1.12-3.04.74-.88 2.03-1.55 3.1-1.57zM21.43 17.64c-.6 1.38-.88 1.99-1.64 3.2-1.06 1.66-2.56 3.74-4.41 3.76-1.63.02-2.05-1.06-4.26-1.04-2.22.02-2.68 1.06-4.31 1.04-1.85-.02-3.27-1.9-4.33-3.56C-.7 16.86-.74 11.27 2.17 8.5c1.35-1.27 3.1-1.96 4.75-1.96 1.74 0 2.84 1.07 4.27 1.07 1.38 0 2.23-1.07 4.26-1.07 1.49 0 3.08.8 4.43 2.17-3.9 2.14-3.27 7.73 1.55 8.93z"/></svg>
-</a>
-</div>
-</div>
-
-<div class="app-card">
-<img src="images/TTSMate.png" class="app-icon">
-<h3>TTSMate</h3>
-<p>
-<span data-lang="en">Convert text to speech instantly on macOS.</span>
-<span data-lang="zh">在 macOS 上即时文本转语音</span>
-</p>
-<div class="button-group">
-<a href="/ttsmate/" class="button">
-<span data-lang="en">View App</span>
-<span data-lang="zh">查看介绍</span>
-</a>
-<a href="https://apps.apple.com/app/6752127439" class="download-button" target="_blank" rel="noopener">
-<svg viewBox="0 0 24 24"><path d="M16.365 1.43c0 1.14-.41 2.24-1.09 3.07-.75.92-1.97 1.63-3.13 1.54-.15-1.11.45-2.3 1.12-3.04.74-.88 2.03-1.55 3.1-1.57zM21.43 17.64c-.6 1.38-.88 1.99-1.64 3.2-1.06 1.66-2.56 3.74-4.41 3.76-1.63.02-2.05-1.06-4.26-1.04-2.22.02-2.68 1.06-4.31 1.04-1.85-.02-3.27-1.9-4.33-3.56C-.7 16.86-.74 11.27 2.17 8.5c1.35-1.27 3.1-1.96 4.75-1.96 1.74 0 2.84 1.07 4.27 1.07 1.38 0 2.23-1.07 4.26-1.07 1.49 0 3.08.8 4.43 2.17-3.9 2.14-3.27 7.73 1.55 8.93z"/></svg>
-</a>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-
-<div class="footer">
-<p>Support: your@email.com</p>
-<p>© 2026 Kylinwind Studio. All rights reserved.</p>
-</div>
-
-<script>
-function setLang(lang) {
-    localStorage.setItem('lang', lang);
-    updateLang(lang);
-}
-function updateLang(lang) {
-    document.querySelectorAll('[data-lang]').forEach(el => {
-        el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
-    });
-}
-(function() {
-    const savedLang = localStorage.getItem('lang');
-    const browserLang = navigator.language.startsWith('zh') ? 'zh' : 'en';
-    const lang = savedLang || browserLang;
-    updateLang(lang);
-})();
-</script>
-
-</body>
+    <script>
+      function setLang(lang) {
+        localStorage.setItem("lang", lang);
+        updateLang(lang);
+      }
+      function updateLang(lang) {
+        document.querySelectorAll("[data-lang]").forEach((el) => {
+          el.style.display =
+            el.getAttribute("data-lang") === lang ? "" : "none";
+        });
+      }
+      (function () {
+        const savedLang = localStorage.getItem("lang");
+        const browserLang = navigator.language.startsWith("zh") ? "zh" : "en";
+        const lang = savedLang || browserLang;
+        updateLang(lang);
+      })();
+    </script>
+  </body>
 </html>
