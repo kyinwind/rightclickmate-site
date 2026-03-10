@@ -71,6 +71,7 @@ p {
 
 .app-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .app-icon {
@@ -223,18 +224,6 @@ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 gap: 20px;
 }
 
-.card {
-background: var(--card-bg);
-padding: 25px;
-border-radius: 16px;
-box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-transform: translateY(-4px);
-box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
 
 .lang-switch {
 position: absolute;
