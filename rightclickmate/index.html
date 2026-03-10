@@ -74,11 +74,21 @@
           <button class="nav-btn next">&#10095;</button>
 
           <div class="screenshot-track">
+            <div data-lang="en">
+            <img src="/rightclickmate/Screenshot1_en.png" alt="Screenshot 1" />
+            <img src="/rightclickmate/Screenshot2_en.png" alt="Screenshot 2" />
+            <img src="/rightclickmate/Screenshot3_en.png" alt="Screenshot 3" />
+            <img src="/rightclickmate/Screenshot4_en.png" alt="Screenshot 4" />
+            <img src="/rightclickmate/Screenshot5_en.png" alt="Screenshot 5" />
+           </div>
+            <div data-lang="zh">
             <img src="/rightclickmate/Screenshot1.png" alt="Screenshot 1" />
             <img src="/rightclickmate/Screenshot2.png" alt="Screenshot 2" />
             <img src="/rightclickmate/Screenshot3.png" alt="Screenshot 3" />
             <img src="/rightclickmate/Screenshot4.png" alt="Screenshot 4" />
             <img src="/rightclickmate/Screenshot5.png" alt="Screenshot 5" />
+           </div>
+            
           </div>
         </div>
       </div>
@@ -570,27 +580,78 @@ pluginkit -e use -i com.michaeldev.RightClickMate.MyFinderSyncExtension</pre
     </div>
 
     <script>
+      document.addEventListener("DOMContentLoaded", () => {
       const track = document.querySelector(".screenshot-track");
-      const slides = Array.from(track.children);
       const nextBtn = document.querySelector(".next");
       const prevBtn = document.querySelector(".prev");
+      
+      let currentIndex = 0;
 
-      let index = 0;
+      // 获取当前可见的语言组及其内部的图片列表
+      function getCurrentGroupAndImages() {
+        // 找到 display 不是 'none' 的那个 div
+        const visibleGroup = Array.from(track.children).find(div => {
+          return window.getComputedStyle(div).display !== 'none';
+        });
 
-      function updateSlide() {
-        track.style.transform = "translateX(-" + index * 100 + "%)";
+        if (!visibleGroup) return { group: null, images: [] };
+
+        const images = visibleGroup.querySelectorAll('img');
+        return { group: visibleGroup, images: images };
       }
 
-      nextBtn.addEventListener("click", () => {
-        index = (index + 1) % slides.length;
-        updateSlide();
-      });
+      function updateSlide() {
+        const { group, images } = getCurrentGroupAndImages();
+        
+        if (!group || images.length === 0) return;
 
-      prevBtn.addEventListener("click", () => {
-        index = (index - 1 + slides.length) % slides.length;
-        updateSlide();
-      });
+        // 防止索引越界
+        if (currentIndex >= images.length) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = images.length - 1;
 
+        // 移动当前的语言组，而不是整个 track
+        // 移动距离 = - (当前索引 * 100%)
+        group.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      // 绑定按钮事件
+      if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+          const { images } = getCurrentGroupAndImages();
+          if (images.length > 0) {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateSlide();
+          }
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+          const { images } = getCurrentGroupAndImages();
+          if (images.length > 0) {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateSlide();
+          }
+        });
+      }
+
+      // 【重要】监听语言切换事件，重置轮播索引
+      // 因为你的 setLang 函数在全局作用域，我们在这里做一个拦截或补充
+      const originalSetLang = window.setLang;
+      window.setLang = function(lang) {
+        // 先执行原有的语言切换逻辑 (隐藏/显示 div)
+        if (originalSetLang) originalSetLang(lang);
+        
+        // 延迟一点点执行，确保 DOM 的 display 属性已经更新
+        setTimeout(() => {
+          currentIndex = 0; // 切换语言后，从头开始播放
+          updateSlide();    // 应用变换
+        }, 50);
+      };
+
+      // 初始化：页面加载完成后执行一次
+      setTimeout(updateSlide, 100);
+    });
     </script>
     <script>
       // 更新页面显示语言
