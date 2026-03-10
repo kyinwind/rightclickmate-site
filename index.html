@@ -1,10 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kylinwind Studio – Focused Apps</title>
+    <title>MichaelDev Studio – Focused Apps</title>
     <link rel="stylesheet" href="/style.css" />
+    <!-- 默认语言 CSS，防止闪烁 -->
+
   </head>
 
   <body>
@@ -183,9 +185,7 @@
               <span data-lang="zh">天天向上 </span>
             </h3>
             <p>
-              <span data-lang="en"
-                >Daily Wisdom</span
-              >
+              <span data-lang="en">Daily Wisdom</span>
               <span data-lang="zh">每日格言</span>
             </p>
             <div class="button-group">
@@ -292,22 +292,54 @@
     </div>
 
     <script>
-      function setLang(lang) {
-        localStorage.setItem("lang", lang);
-        updateLang(lang);
-      }
+      // 更新页面显示语言
       function updateLang(lang) {
         document.querySelectorAll("[data-lang]").forEach((el) => {
           el.style.display =
             el.getAttribute("data-lang") === lang ? "" : "none";
         });
+        document.documentElement.lang = lang; // SEO + 浏览器翻译
       }
-      (function () {
-        const savedLang = localStorage.getItem("lang");
-        const browserLang = navigator.language.startsWith("zh") ? "zh" : "en";
-        const lang = savedLang || browserLang;
+
+      // 用户点击切换语言
+      function setLang(lang) {
+        localStorage.setItem("lang", lang);
         updateLang(lang);
-      })();
+      }
+
+      // 自动检测语言（组合方法）
+      async function detectLang() {
+        const savedLang = localStorage.getItem("lang");
+        if (savedLang) {
+          updateLang(savedLang);
+          return;
+        }
+
+        let lang = "zh"; // 默认中文
+
+        try {
+          // 尝试从网站 API 获取国家/语言
+          const res = await fetch("https://ipapi.co/json/");
+          if (res.ok) {
+            const data = await res.json();
+            lang = data.country === "CN" ? "zh" : "en";
+          } else {
+            console.warn("IP API 返回非 200，使用浏览器语言 fallback");
+            const navLang = navigator.language || navigator.userLanguage;
+            lang = navLang.startsWith("zh") ? "zh" : "en";
+          }
+        } catch (err) {
+          // 请求失败时 fallback 浏览器语言
+          console.error("IP API 请求失败，使用浏览器语言 fallback", err);
+          const navLang = navigator.language || navigator.userLanguage;
+          lang = navLang.startsWith("zh") ? "zh" : "en";
+        }
+
+        updateLang(lang);
+      }
+
+      // 页面加载立即检测
+      detectLang();
     </script>
   </body>
 </html>

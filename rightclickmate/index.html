@@ -590,6 +590,52 @@ pluginkit -e use -i com.michaeldev.RightClickMate.MyFinderSyncExtension</pre
         index = (index - 1 + slides.length) % slides.length;
         updateSlide();
       });
+
+    </script>
+    <script>
+      // 更新页面显示语言
+      function updateLang(lang) {
+        // 切换显示内容
+        document.querySelectorAll("[data-lang]").forEach((el) => {
+          el.style.display =
+            el.getAttribute("data-lang") === lang ? "" : "none";
+        });
+        // 同步 html lang 属性（SEO + 浏览器翻译）
+        document.documentElement.lang = lang;
+      }
+
+      // 用户点击切换语言
+      function setLang(lang) {
+        localStorage.setItem("lang", lang);
+        updateLang(lang);
+      }
+
+      // 自动检测语言
+      async function detectLang() {
+        const savedLang = localStorage.getItem("lang");
+        if (savedLang) {
+          updateLang(savedLang);
+          return;
+        }
+
+        try {
+          // 调用免费 IP API 获取国家信息
+          const res = await fetch("https://ipapi.co/json/");
+          const data = await res.json();
+
+          // 如果在中国显示中文，否则显示英文
+          const lang = data.country === "CN" ? "zh" : "en";
+
+          updateLang(lang);
+        } catch (err) {
+          // 出错默认英文
+          console.error("IP API 检测失败，默认英文", err);
+          updateLang("en");
+        }
+      }
+
+      // 页面加载立即检测
+      detectLang();
     </script>
   </body>
 </html>
