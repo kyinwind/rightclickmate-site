@@ -4,174 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RightClickMate – Finder Right-Click Assistant for macOS</title>
-
-    <style>
-      :root {
-        --bg: #ffffff;
-        --text: #111111;
-        --subtext: #666666;
-        --accent: #007aff;
-        --card: #f5f5f7;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #000000;
-          --text: #f5f5f7;
-          --subtext: #aaaaaa;
-          --card: #1c1c1e;
-        }
-      }
-
-      body {
-        margin: 0;
-        font-family:
-          -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.6;
-      }
-
-      .container {
-        max-width: 1000px;
-        margin: auto;
-        padding: 60px 20px;
-      }
-
-      .hero {
-        text-align: center;
-        margin-bottom: 60px;
-      }
-
-      h1 {
-        font-size: 48px;
-        margin-bottom: 20px;
-      }
-
-      .subtitle {
-        font-size: 20px;
-        color: var(--subtext);
-        margin-bottom: 40px;
-      }
-
-      .button-group {
-        margin-top: auto;
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-      }
-
-      .button {
-        display: inline-block;
-        padding: 14px 28px;
-        font-size: 16px;
-        border-radius: 12px;
-        text-decoration: none;
-        background: var(--accent);
-        color: white;
-        transition: opacity 0.2s ease;
-      }
-
-      .button:hover {
-        opacity: 0.85;
-      }
-      .download-button {
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        background: #f2f2f2;
-        color: rgb(3, 3, 3);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        font-size: 18px;
-        transition: 0.2s ease;
-      }
-
-      .download-button:hover {
-        transform: scale(1.1);
-      }
-      /* Screenshot Section */
-      .screenshot-section {
-        margin: 80px 0;
-        text-align: center;
-      }
-
-      .screenshot-wrapper {
-        position: relative;
-        overflow: hidden;
-        border-radius: 20px;
-      }
-
-      .screenshot-track {
-        display: flex;
-        transition: transform 0.4s ease;
-      }
-
-      .screenshot-track img {
-        width: 100%;
-        border-radius: 20px;
-        flex-shrink: 0;
-      }
-
-      .nav-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0, 0, 0, 0.4);
-        color: white;
-        border: none;
-        padding: 12px 16px;
-        cursor: pointer;
-        border-radius: 12px;
-        font-size: 18px;
-        z-index: 10; /* 加这一行 */
-      }
-
-      .nav-btn:hover {
-        background: rgba(0, 0, 0, 0.6);
-      }
-
-      .prev {
-        left: 15px;
-      }
-      .next {
-        right: 15px;
-      }
-
-      .section {
-        margin-bottom: 80px;
-      }
-
-      .section h2 {
-        font-size: 28px;
-        margin-bottom: 30px;
-        text-align: center;
-      }
-
-      .features {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-      }
-
-      .card {
-        background: var(--card);
-        padding: 25px;
-        border-radius: 16px;
-      }
-
-      .footer {
-        text-align: center;
-        color: var(--subtext);
-        font-size: 14px;
-        margin-top: 60px;
-      }
-    </style>
+    <link rel="stylesheet" href="/style.css" />
   </head>
 
   <body>
+    <!-- 语言切换 -->
+    <div style="text-align: right; padding: 20px 40px; font-size: 14px">
+      <a href="#" onclick="setLang('en')">EN</a> |
+      <a href="#" onclick="setLang('zh')">中文</a>
+    </div>
+    <script>
+      function setLang(lang) {
+        localStorage.setItem("lang", lang);
+
+        document.querySelectorAll("[data-lang]").forEach((el) => {
+          if (el.dataset.lang === lang) {
+            el.style.display = "block";
+          } else {
+            el.style.display = "none";
+          }
+        });
+      }
+
+      function detectLang() {
+        let lang = localStorage.getItem("lang");
+
+        if (!lang) {
+          lang = navigator.language.startsWith("zh") ? "zh" : "en";
+        }
+
+        setLang(lang);
+      }
+
+      document.addEventListener("DOMContentLoaded", detectLang);
+    </script>
+
     <div class="container">
       <div class="hero">
         <h1>RightClickMate</h1>
@@ -238,8 +105,216 @@
           </div>
         </div>
       </div>
+      <section class="section help-section">
+        <h2 data-lang="zh">帮助与常见问题</h2>
+        <h2 data-lang="en">Help & FAQ</h2>
 
-      <div class="footer">© 2026 Xuehui Yang</div>
+        <div class="help-content">
+          <div data-lang="zh">
+            <h3>RightClickMate介绍</h3>
+            <div class="indent-text">
+              <p>RightClickMate — 让 Finder 右键更高效</p>
+              <p>
+                RightClickMate 是一款专为 macOS Finder
+                打造的右键增强工具，让你在最熟悉的操作入口中，完成更多高频文件操作，无需切换应用，无需额外学习成本。
+              </p>
+              <p>它专注于一个目标：让每一次右键，都更有价值。</p>
+            </div>
+
+            <h4>适合人群</h4>
+            <div class="indent-text">
+              <p>
+                开发者 / 运维 / 技术人员、设计师 /
+                内容创作者、经常整理文件的办公用户、希望提升 Finder 使用效率的
+                macOS 用户
+              </p>
+            </div>
+
+            <h4>主要功能</h4>
+
+            <div class="indent-text">
+              <ul>
+                <li>快速新建文件</li>
+                <li>一键复制路径</li>
+                <li>在当前位置打开终端</li>
+                <li>批量修改文件名</li>
+                <li>批量调整图片尺寸</li>
+                <li>文件复制到指定目录</li>
+                <li>复制目录树</li>
+                <li>禅桌面（录屏 / 演讲模式）</li>
+              </ul>
+            </div>
+            <h4>通用权限</h4>
+            <div class="indent-text">
+              <h5>三个核心目录权限</h5>
+              <p>
+                这里对常用的三个目录进行授权，目的是为了获得这三个目录的访问权限。
+                在右键菜单中，“复制到”和“打开目录”，以及“复制目录树”，都会用到这个访问权限。
+                如果后续访问的目录超出了这三个目录的范围，app会弹出目录授权的对话框让用户进行授权，如下图：
+              </p>
+              <img
+                src="auth.png"
+                alt="auth"
+                style="max-width: 100%; margin: 20px 0"
+              />
+              <p>
+                授权后，app即可对该目录进行复制文件、打开、复制目录树等操作。
+              </p>
+              <p>
+                总结：以上三个目录是RightClickMate获得的一个初始权限集合，以便于用户可以正常使用RightClickMate的一些基础功能，例如“打开目录”、“复制（文件）到”菜单功能。
+              </p>
+
+              <h5>Finder扩展开关</h5>
+
+              <ul>
+                <li>MacOS26+</li>
+                <p>
+                  为了能够正常使用RightClickMate，还需要在系统设置中打开RightClickMate的Finder扩展开关。
+                </p>
+                <img
+                  src="Finder turn on1.png"
+                  alt="auth"
+                  style="max-width: 100%; margin: 20px 0"
+                />
+
+                <img
+                  src="Finder turn on2.png"
+                  alt="auth"
+                  style="max-width: 100%; margin: 20px 0"
+                />
+                <li>MacOS15+</li>
+                请见问题： 我找不到扩展开关，怎么办？
+                <li>MacOS14+</li>
+                待补充。
+              </ul>
+            </div>
+
+            <h4>目录权限</h4>
+            <div class="indent-text">
+              <img
+                src="directoryAuth.png"
+                alt="directoryAuth"
+                style="max-width: 100%; margin: 20px 0"
+              />
+              里面列出的都是可以出现在右键菜单“复制到”、“打开目录”中的目录清单，对于经常会用到的目录，可以手工在这里添加并赋权。
+            </div>
+            <h4>新建文件</h4>
+            <div class="indent-text">
+              <img
+                src="newFileType.png"
+                alt="newFileType"
+                style="max-width: 100%; margin: 20px 0"
+              />
+              系统内置了约十种常用的office文件类型。
+              对于Pro用户，可以添加自定义的文档模版，当新建文件的时候，就可以使用自定义的模版。
+              新建文件类型的时候，如果不选择模版文件，则默认按照文本文件新建。
+              如果选择了模版文件，则新建文件的时候就复制一份模版文件。
+            </div>
+
+            <h3>常见问题</h3>
+
+            <h4>
+              1、我安装好了RightClickMate，但是在右键菜单看不到定制菜单的出现，怎么回事？
+            </h4>
+            <div class="indent-text">
+              <p>
+                多数情况下，安装好了RightClickMate，右键菜单就可以出现了。如下图：
+              </p>
+              <img
+                src="context menu.png"
+                alt="context menu"
+                style="max-width: 100%; margin: 20px 0"
+              />
+              <p>
+                但是如果
+                macbook已经使用了一段较长时间没有重启了，那么确实有一定几率发生app右键自定义菜单不显示的情况。
+              </p>
+              <p>请尝试以下步骤：</p>
+              <ol>
+                <li>检查 Finder 扩展是否开启</li>
+                <li>刷新 Finder</li>
+                <p>在终端执行命令（请复制以下命令，在Terminal 执行）</p>
+                <pre>killall Finder</pre>
+                <p>
+                  这个命令的作用是重启Finder，Finder会发现RightClickMate安装的插件，然后加载。
+                </p>
+
+                <p>如果仍然不行，请重启 Mac。</p>
+                <li>重新启动 Mac</li>
+              </ol>
+            </div>
+
+            <h4>2、我找不到扩展开关，怎么办？</h4>
+            <div class="indent-text">
+              <p>
+                MacOS在不同的版本，Finder扩展的开关界面不太一样。
+                在mac15.1的系统设置的确找不到RightClickMate的扩展开关，如果安装RightClickMate之后，在桌面上点击右键看不到新建、复制路径等自定义的菜单，那么请打开终端，按照顺序复制并运行以下两条命令：
+              </p>
+              <ol>
+                <li>重启Finder插件</li>
+                <pre>
+pluginkit -e use -i com.michaeldev.RightClickMate.MyFinderSyncExtension</pre
+                >
+                <li>重启访达</li>
+                <pre>killall Finder</pre>
+                <p>
+                  这两条命令运行完毕后，在桌面上点击右键，应该就可以看到自定义的菜单出现了。
+                </p>
+              </ol>
+            </div>
+            <h4>
+              3、在批量修改文件名的时候，我想要替换字符，但是不想全部替换，怎么办？
+            </h4>
+            <div class="indent-text">
+              <p>答：使用替换的正则表达式来处理。</p>
+              <p>find pattern：^([^_]*)_</p>
+              <p>replace with ：$1.</p>
+              <p>意思是把文件名第一个出现的下划线，替换为.</p>
+            </div>
+          </div>
+
+          <div data-lang="en">
+            <h3>RightClickMate Introduction</h3>
+
+            <p>
+              RightClickMate is a right-click enhancement tool designed for
+              macOS Finder, allowing you to perform more frequent file
+              operations directly from the context menu.
+            </p>
+
+            <h4>Main Features</h4>
+
+            <ul>
+              <li>Quick new file creation</li>
+              <li>Copy file path instantly</li>
+              <li>Open Terminal at current location</li>
+              <li>Batch rename files</li>
+              <li>Batch resize images</li>
+              <li>Copy files to preset directories</li>
+              <li>Copy directory tree</li>
+              <li>Zen Desktop mode</li>
+            </ul>
+
+            <h3>Frequently Asked Questions</h3>
+
+            <h4>I installed the app but can't see the right-click menu</h4>
+
+            <p>Try the following steps:</p>
+
+            <ol>
+              <li>Ensure the Finder Extension is enabled</li>
+              <li>Restart Finder</li>
+            </ol>
+
+            <pre>
+            killall Finder
+            </pre>
+
+            <p>If the issue persists, restart your Mac.</p>
+          </div>
+        </div>
+      </section>
+      <div class="footer">© 2026 MichaelDev Studio</div>
     </div>
 
     <script>

@@ -8,21 +8,22 @@
 }
 
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: #f5f5f7;
-    color: #1d1d1f;
+margin: 0;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+background: linear-gradient(to bottom, #f5f5f7, #ffffff);
+color: #1d1d1f;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
     padding: 60px 20px;
 }
 
 h1 {
-    font-size: 42px;
-    margin-bottom: 20px;
+font-size: 52px;
+font-weight: 700;
+letter-spacing: -0.02em;
 }
 
 h2 {
@@ -40,8 +41,12 @@ p {
     padding: 100px 20px 60px;
 }
 
-.section {
-    margin-top: 80px;
+.section p {
+    text-align: center;
+    /* 可选：限制最大宽度，防止文字太宽导致阅读体验不好 */
+    max-width: 1200px; 
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .app-grid {
@@ -52,7 +57,7 @@ p {
 }
 
 .app-card {
-    background: white;
+    background: var(--card-bg);
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
@@ -105,7 +110,7 @@ p {
 }
 
 .button:hover {
-    background: #3f5e4b;
+    background: #0062cc;
 }
 
 .download-button {
@@ -118,11 +123,13 @@ p {
     justify-content: center;
     text-decoration: none;
     transition: 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 .download-button:hover {
     background: #e5e5e5;
     transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 
 .download-button svg {
@@ -130,10 +137,185 @@ p {
     height: 18px;
     fill: #000;
 }
+
 .footer {
-    text-align: center;
-    margin-top: 120px;
-    padding: 40px 20px;
-    font-size: 14px;
-    color: #888;
+text-align: center;
+margin-top: 120px;
+padding: 40px 20px;
+font-size: 14px;
+color: #888;
+border-top: 1px solid #eee;
+}
+
+.subtitle {
+font-size: 21px;
+color: var(--subtext);
+margin-bottom: 40px;
+max-width: 700px;
+margin-left: auto;
+margin-right: auto;
+}
+
+/* Screenshot Section */
+.screenshot-section {
+margin: 80px 0;
+text-align: center;
+}
+
+.screenshot-wrapper {
+position: relative;
+overflow: hidden;
+border-radius: 20px;
+}
+
+.screenshot-track {
+display: flex;
+transition: transform 0.4s ease;
+}
+
+.screenshot-track img {
+width: 100%;
+border-radius: 20px;
+flex-shrink: 0;
+box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.nav-btn {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background: rgba(0,0,0,0.35);
+color: white;
+border: none;
+width: 44px;
+height: 44px;
+cursor: pointer;
+border-radius: 999px;
+font-size: 18px;
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 10;
+backdrop-filter: blur(6px);
+}
+
+.nav-btn:hover {
+background: rgba(0, 0, 0, 0.6);
+}
+
+.prev {
+left: 15px;
+}
+.next {
+right: 15px;
+}
+
+
+.section h2 {
+font-size: 28px;
+margin-bottom: 30px;
+text-align: center;
+}
+
+.features {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+}
+
+.card {
+background: var(--card-bg);
+padding: 25px;
+border-radius: 16px;
+box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+transform: translateY(-4px);
+box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.lang-switch {
+position: absolute;
+top: 20px;
+right: 20px;
+display: flex;
+gap: 10px;
+}
+
+.lang-switch button {
+border: none;
+background: #eee;
+padding: 6px 12px;
+border-radius: 8px;
+cursor: pointer;
+}
+
+.lang-switch button:hover {
+background: #ddd;
+}
+
+/* 帮助文档区域 */
+.help-section {
+max-width: 1200px;
+margin: auto;
+}
+
+.help-content {
+text-align: left;
+line-height: 1.7;
+}
+
+.help-content h3 {
+margin-top: 40px;
+}
+
+.help-content pre {
+background: #f4f4f4;
+padding: 15px;
+border-radius: 10px;
+overflow-x: auto;
+}
+
+.help-content ul {
+padding-left: 20px;
+}
+
+.help-content ol {
+padding-left: 20px;
+}
+/* 强制覆盖 .section p 的居中设置 */
+.help-content p, 
+.help-content li,
+.help-content pre,
+.help-content code {
+    text-align: left !important; /* !important 确保最高优先级 */
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* 同时也让 help-content 里的标题左对齐 */
+.help-content h3,
+.help-content h4 {
+    text-align: left;
+}
+
+/* 核心代码：让 help-content 里的正文统一缩进 */
+.indent-text {
+    padding-left: 24px;       /* 缩进距离 */
+    border-left: 2px solid var(--accent); /* 用你的主题色做左边框 */
+    margin-bottom: 30px;      /* 和下面内容拉开点距离 */
+    color: #333;              /* 稍微加深一点文字颜色 */
+}
+
+.help-content img {
+    max-width: 300px;   /* 宽度最大 200px */
+    max-height: 300px;  /* 高度最大 200px */
+    width: auto;        /* 宽度自动（关键：保持比例） */
+    height: auto;       /* 高度自动（关键：保持比例） */
+    
+    /* 可选：让图片在限制框内居中显示（如果图片很小） */
+    display: block;     
+    margin: 10px auto;  
 }
