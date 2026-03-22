@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SongJing Assistant – 诵经助手</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <!-- 语言切换 -->
+    <div style="text-align: right; padding: 20px 40px; font-size: 14px">
+      <a href="#" onclick="setLang('en')">EN</a> |
+      <a href="#" onclick="setLang('zh')">中文</a>
+    </div>
+    <script>
+      function setLang(lang) {
+        localStorage.setItem("lang", lang);
+
+        document.querySelectorAll("[data-lang]").forEach((el) => {
+          if (el.dataset.lang === lang) {
+            el.style.display = "block";
+          } else {
+            el.style.display = "none";
+          }
+        });
+      }
+
+      function detectLang() {
+        let lang = localStorage.getItem("lang");
+
+        if (!lang) {
+          lang = navigator.language.startsWith("zh") ? "zh" : "en";
+        }
+
+        setLang(lang);
+      }
+
+      document.addEventListener("DOMContentLoaded", detectLang);
+    </script>
+
+    <div class="container">
+      <div class="hero">
+        <h1>SongJing Assistant</h1>
+        <p class="subtitle">
+           <div data-lang="zh">
+            优雅的诵经体验，支持音频功能
+           </div>
+            <div data-lang="en">
+            Elegant chanting experience with audio support
+           </div>
+        </p>
+        <a class="button" href="https://apps.apple.com/app/6448427701">
+          <div data-lang="zh">
+            在 App Store 下载
+           </div>
+            <div data-lang="en">
+            Download on the App Store
+           </div>
+        </a>
+      </div>
+
+      <!-- Screenshot Carousel -->
+      <div class="screenshot-section">
+        
+          <div data-lang="zh">
+            <h2>App 预览</h2>
+           </div>
+            <div data-lang="en">
+            <h2>App Preview</h2>
+           </div>
+        <div class="screenshot-wrapper">
+          <button class="nav-btn prev">❮</button>
+          <button class="nav-btn next">❯</button>
+
+          <div class="screenshot-track">
+            <div data-lang="en">
+            <img src="/images/SongJing.png" alt="SongJing Assistant Screenshot 1" />
+            </div>
+            <div data-lang="zh">
+            <img src="/images/SongJing.png" alt="诵经助手截图 1" />
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Key Features</h2>
+        <div class="features">
+          <div class="app-card">
+            <div data-lang="zh">
+             <h3>功课管理</h3>
+            <p>提供发愿、功课管理功能，帮助佛友通过发愿建立功课计划，并记录佛友功课完成情况</p>
+           </div>
+            <div data-lang="en">
+             <h3>Practice Management</h3>
+            <p>Provide vow making and practice management functions to help Buddhists establish practice plans through vows and record practice completion status</p>
+           </div>
+           
+          </div>
+
+          <div class="app-card">
+            <div data-lang="zh">
+              <h3>诵经功能</h3>
+              <p>
+                共内置40多种常见经书，供广大佛子诵经学习
+              </p>
+            </div>
+            <div data-lang="en">
+              <h3>Scripture Chanting</h3>
+              <p>
+                Built-in more than 40 common scriptures for Buddhists to learn and chant
+              </p>
+            </div>
+            
+          </div>
+
+          <div class="app-card">
+            <div data-lang="zh">
+              <h3>念佛计数</h3>
+              <p>提供计数器为佛友念佛、念咒计数</p>
+            </div>
+            <div data-lang="en">
+              <h3>Mantra Counting</h3>
+              <p>Provide counter for Buddhists to count Buddha name and mantra recitations</p>
+            </div>
+          </div>
+
+          <div class="app-card">
+            <div data-lang="zh">
+              <h3>拜忏功能</h3>
+              <p>自定义拜忏数量和忏悔文</p>
+            </div>
+            <div data-lang="en">
+              <h3>Repentance Practice</h3>
+              <p>Customize repentance count and repentance text</p>
+            </div>
+          </div>
+
+          <div class="app-card">
+            <div data-lang="zh">
+              <h3>佛学知识测试</h3>
+              <p>增加佛学知识测试功能</p>
+            </div>
+            <div data-lang="en">
+              <h3>Buddhist Knowledge Test</h3>
+              <p>Add Buddhist knowledge test functionality</p>
+            </div>
+          </div>
+
+          <div class="app-card">
+            <div data-lang="zh">
+              <h3>设置功能</h3>
+              <p>可以查看“功课通知设置”、“意见反馈”、“关于”、“版本”等设置功能</p>
+            </div>
+            <div data-lang="en">
+              <h3>Settings</h3>
+              <p>Can view "Practice Notification Settings", "Feedback", "About", "Version" and other setting functions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="section help-section">
+        <h2 data-lang="zh">帮助与常见问题</h2>
+        <h2 data-lang="en">Help & FAQ</h2>
+
+        <div class="help-content">
+          <div data-lang="zh">
+            <h3>诵经助手介绍</h3>
+            <div class="indent-text">
+              <p>诵经助手 - 优雅的诵经体验，支持音频功能</p>
+              <p>
+                诵经助手是一款专为佛友设计的诵经工具，提供优雅的诵经体验，支持音频功能。
+                主要功能包括：功课管理、诵经功能、念佛计数、拜忏功能和设置功能。
+                共内置40多种常见经书，供广大佛子诵经学习。
+              </p>
+              <p>版本：1.8.1</p>
+              <p>开发者：学辉 杨</p>
+            </div>
+
+            <h4>适合人群</h4>
+            <div class="indent-text">
+              <p>
+                佛友、修行者、希望通过诵经来培养专注力的人士
+              </p>
+            </div>
+
+            <h4>主要功能</h4>
+
+            <div class="indent-text">
+              <ul>
+                <li>功课管理：提供发愿、功课管理功能，帮助佛友通过发愿建立功课计划，并记录佛友功课完成情况，督促佛友每日完成功课，精进修行。</li>
+                <li>诵经功能：共内置40多种常见经书，供广大佛子诵经学习。</li>
+                <li>念佛计数：提供计数器为佛友念佛、念咒计数。</li>
+                <li>拜忏功能：自定义拜忏数量和忏悔文。</li>
+                <li>佛学知识测试：增加佛学知识测试功能。</li>
+                <li>设置功能：可以查看“功课通知设置”、“意见反馈”、“关于”、“版本”等设置功能。</li>
+              </ul>
+            </div>
+
+            <h3>常见问题</h3>
+
+            <h4>
+              1、如何使用功课管理功能？
+            </h4>
+            <div class="indent-text">
+              <p>
+                通过发愿建立功课计划，并记录功课完成情况，
+                系统会督促你每日完成功课，精进修行。
+              </p>
+            </div>
+
+            <h4>2、如何使用诵经功能？</h4>
+            <div class="indent-text">
+              <p>
+                在应用中选择你想要诵读的经书，点击开始即可进行诵经。
+                应用内置了40多种常见经书，供你选择。
+              </p>
+            </div>
+
+            <h4>3、如何使用念佛计数功能？</h4>
+            <div class="indent-text">
+              <p>
+                使用应用提供的计数器功能，为你的念佛、念咒进行计数。
+              </p>
+            </div>
+          </div>
+
+          <div data-lang="en">
+            <h3>About SongJing Assistant</h3>
+            <div class="indent-text">
+              <p>SongJing Assistant - Elegant chanting experience with audio support</p>
+              <p>
+                SongJing Assistant is a chanting tool designed specifically for Buddhists, providing an elegant chanting experience with audio support.
+                Main features include: practice management, scripture chanting, mantra counting, repentance practice, and settings.
+                It has built-in more than 40 common scriptures for Buddhists to learn and chant.
+              </p>
+              <p>Version: 1.8.1</p>
+              <p>Developer: 学辉 杨</p>
+            </div>
+
+            <h4>Who Is It For</h4>
+            <div class="indent-text">
+              <p>
+                Buddhists, practitioners, individuals who want to cultivate concentration through scripture chanting
+              </p>
+            </div>
+
+            <h4>Main Features</h4>
+
+            <div class="indent-text">
+              <ul>
+                <li>Practice Management: Provide vow making and practice management functions to help Buddhists establish practice plans through vows and record practice completion status, urging Buddhists to complete daily practice and advance in cultivation.</li>
+                <li>Scripture Chanting: Built-in more than 40 common scriptures for Buddhists to learn and chant.</li>
+                <li>Mantra Counting: Provide counter for Buddhists to count Buddha name and mantra recitations.</li>
+                <li>Repentance Practice: Customize repentance count and repentance text.</li>
+                <li>Buddhist Knowledge Test: Add Buddhist knowledge test functionality.</li>
+                <li>Settings: Can view "Practice Notification Settings", "Feedback", "About", "Version" and other setting functions.</li>
+              </ul>
+            </div>
+
+            <h3>FAQ</h3>
+
+            <h4>
+              1. How to use the practice management function?
+            </h4>
+            <div class="indent-text">
+              <p>
+                Establish practice plans through vows and record practice completion status,
+                the system will urge you to complete daily practice and advance in cultivation.
+              </p>
+            </div>
+
+            <h4>2. How to use the scripture chanting function?</h4>
+            <div class="indent-text">
+              <p>
+                Select the scripture you want to chant in the app and click start to begin chanting.
+                The app has built-in more than 40 common scriptures for you to choose from.
+              </p>
+            </div>
+
+            <h4>3. How to use the mantra counting function?</h4>
+            <div class="indent-text">
+              <p>
+                Use the counter function provided by the app to count your Buddha name and mantra recitations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="footer">© 2026 MichaelDev Studio</div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+      const track = document.querySelector(".screenshot-track");
+      const nextBtn = document.querySelector(".next");
+      const prevBtn = document.querySelector(".prev");
+      
+      let currentIndex = 0;
+
+      // 获取当前可见的语言组及其内部的图片列表
+      function getCurrentGroupAndImages() {
+        // 找到 display 不是 'none' 的那个 div
+        const visibleGroup = Array.from(track.children).find(div => {
+          return window.getComputedStyle(div).display !== 'none';
+        });
+
+        if (!visibleGroup) return { group: null, images: [] };
+
+        const images = visibleGroup.querySelectorAll('img');
+        return { group: visibleGroup, images: images };
+      }
+
+      function updateSlide() {
+        const { group, images } = getCurrentGroupAndImages();
+        
+        if (!group || images.length === 0) return;
+
+        // 防止索引越界
+        if (currentIndex >= images.length) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = images.length - 1;
+
+        // 移动当前的语言组，而不是整个 track
+        // 移动距离 = - (当前索引 * 100%)
+        group.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      // 绑定按钮事件
+      if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+          const { images } = getCurrentGroupAndImages();
+          if (images.length > 0) {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateSlide();
+          }
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+          const { images } = getCurrentGroupAndImages();
+          if (images.length > 0) {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateSlide();
+          }
+        });
+      }
+
+      // 【重要】监听语言切换事件，重置轮播索引
+      // 因为你的 setLang 函数在全局作用域，我们在这里做一个拦截或补充
+      const originalSetLang = window.setLang;
+      window.setLang = function(lang) {
+        // 先执行原有的语言切换逻辑 (隐藏/显示 div)
+        if (originalSetLang) originalSetLang(lang);
+        
+        // 延迟一点点执行，确保 DOM 的 display 属性已经更新
+        setTimeout(() => {
+          currentIndex = 0; // 切换语言后，从头开始播放
+          updateSlide();    // 应用变换
+        }, 50);
+      };
+
+      // 初始化：页面加载完成后执行一次
+      setTimeout(updateSlide, 100);
+    });
+    </script>
+    <script>
+      // 更新页面显示语言
+      function updateLang(lang) {
+        // 切换显示内容
+        document.querySelectorAll("[data-lang]").forEach((el) => {
+          el.style.display =
+            el.getAttribute("data-lang") === lang ? "" : "none";
+        });
+        // 同步 html lang 属性（SEO + 浏览器翻译）
+        document.documentElement.lang = lang;
+      }
+
+      // 用户点击切换语言
+      function setLang(lang) {
+        localStorage.setItem("lang", lang);
+        updateLang(lang);
+      }
+
+      // 自动检测语言
+      async function detectLang() {
+        const savedLang = localStorage.getItem("lang");
+        if (savedLang) {
+          updateLang(savedLang);
+          return;
+        }
+
+        try {
+          // 调用免费 IP API 获取国家信息
+          const res = await fetch("https://ipapi.co/json/");
+          const data = await res.json();
+
+          // 如果在中国显示中文，否则显示英文
+          const lang = data.country === "CN" ? "zh" : "en";
+
+          updateLang(lang);
+        } catch (err) {
+          // 出错默认英文
+          console.error("IP API 检测失败，默认英文", err);
+          updateLang("en");
+        }
+      }
+
+      // 页面加载立即检测
+      detectLang();
+    </script>
+  </body>
+</html>
